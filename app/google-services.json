@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "665718291441",
+    "firebase_url": "https://clone-olx-deaef.firebaseio.com",
+    "project_id": "clone-olx-deaef",
+    "storage_bucket": "clone-olx-deaef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:665718291441:android:a771a2f826d19eca",
+        "android_client_info": {
+          "package_name": "br.com.mdr.olx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "665718291441-j41m7auc1e3eva40k4ko47uf58gqf5dn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBji5-ncADImbD4k024ze62cu0C-icCLBs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "665718291441-j41m7auc1e3eva40k4ko47uf58gqf5dn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

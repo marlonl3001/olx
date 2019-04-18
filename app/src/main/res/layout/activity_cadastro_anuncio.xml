@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.CadastroAnuncioActivity">
+
+    <ImageView
+        android:id="@+id/img1"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/content_description"
+        android:scaleType="centerCrop"
+        android:onClick="onClick"
+        app:srcCompat="@drawable/image_placeholder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/img2"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/img2"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/content_description"
+        android:scaleType="centerCrop"
+        android:onClick="onClick"
+        app:srcCompat="@drawable/image_placeholder"
+        android:layout_weight="1"
+        app:layout_constraintTop_toTopOf="@id/img1"
+        app:layout_constraintStart_toEndOf="@id/img1"
+        app:layout_constraintEnd_toStartOf="@id/img3"/>
+
+    <ImageView
+        android:id="@+id/img3"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/content_description"
+        android:scaleType="centerCrop"
+        android:onClick="onClick"
+        app:srcCompat="@drawable/image_placeholder"
+        app:layout_constraintTop_toTopOf="@id/img1"
+        app:layout_constraintStart_toEndOf="@id/img2"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Spinner
+        android:id="@+id/spinnerEstados"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@id/img1"
+        app:layout_constraintTop_toBottomOf="@id/img1"
+        app:layout_constraintEnd_toStartOf="@id/spinnerCategorias"/>
+
+    <Spinner
+        android:id="@+id/spinnerCategorias"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/spinnerEstados"
+        app:layout_constraintStart_toEndOf="@id/spinnerEstados"
+        app:layout_constraintEnd_toEndOf="@id/img3"/>
+
+    <EditText
+        android:id="@+id/edtTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edit_text"
+        android:ems="10"
+        android:padding="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Título"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinnerEstados"/>
+
+    <com.blackcat.currencyedittext.CurrencyEditText
+        android:id="@+id/edtVlr"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edit_text"
+        android:ems="10"
+        android:padding="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtTitulo"/>
+
+    <com.santalu.maskedittext.MaskEditText
+        android:id="@+id/edtTelefone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edit_text"
+        android:padding="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="phone"
+        app:met_mask="(##) #####-####"
+        android:hint="Telefone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtVlr"/>
+
+    <EditText
+        android:id="@+id/edtDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edit_text"
+        android:ems="10"
+        android:padding="16dp"
+        android:lines="3"
+        android:maxLines="3"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="textMultiLine"
+        android:imeOptions="actionDone"
+        android:hint="Descrição"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtTelefone"/>
+
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Cadastrar"
+        android:paddingHorizontal="16dp"
+        android:onClick="onClick"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/edtDesc"
+        app:layout_constraintEnd_toEndOf="@id/edtDesc"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>
