@@ -14,7 +14,7 @@
             android:id="@+id/imgItem"
             android:layout_width="160dp"
             android:layout_height="110dp"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             android:contentDescription="@string/content_description"
             app:srcCompat="@drawable/image_placeholder"
             app:layout_constraintTop_toTopOf="parent"

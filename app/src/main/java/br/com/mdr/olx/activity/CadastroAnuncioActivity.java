@@ -178,18 +178,17 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
                 String estado = spinnerEstados.getSelectedItem().toString();
                 String categoria = spinnerCategorias.getSelectedItem().toString();
                 String titulo = edtTitulo.getText().toString();
-                String valor = String.valueOf(edtValor.getRawValue());
+                String valor = String.valueOf(edtValor.getText().toString());
                 String telefone = edtTelefone.getText().toString();
                 String descricao = edtDescricao.getText().toString();
 
                 anuncio.setIdUsuario(idUsuario);
                 anuncio.setTitulo(titulo);
-                anuncio.setValor(Double.parseDouble(valor));
-                anuncio.setTitulo(telefone);
-                anuncio.setTitulo(descricao);
-                anuncio.setTitulo(estado);
-                anuncio.setTitulo(categoria);
-                anuncio.setTitulo(descricao);
+                anuncio.setDesc(descricao);
+                anuncio.setValor(valor);
+                anuncio.setTelefone(telefone);
+                anuncio.setEstado(estado);
+                anuncio.setCategoria(categoria);
 
                 for (int i = 1; i <= caminhosImagem.size(); i++ ) {
                     imageName = caminhosImagem.get(i - 1);
@@ -213,7 +212,7 @@ public class CadastroAnuncioActivity extends AppCompatActivity {
         String estado = spinnerEstados.getSelectedItem().toString();
         String categoria = spinnerCategorias.getSelectedItem().toString();
         String titulo = edtTitulo.getText().toString();
-        String valor = String.valueOf(edtValor.getRawValue());
+        String valor = String.valueOf(edtValor.getText().toString());
         String telefone = edtTelefone.getText().toString();
         String descricao = edtDescricao.getText().toString();
 

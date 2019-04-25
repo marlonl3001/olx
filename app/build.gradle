@@ -47,5 +47,8 @@ dependencies {
 
     //EditText com máscara de telefone
     implementation 'com.github.santalu:mask-edittext:1.0.7'
+
+    //Carousel
+    implementation 'com.synnapps:carouselview:0.1.5'
 }
 apply plugin: 'com.google.gms.google-services'

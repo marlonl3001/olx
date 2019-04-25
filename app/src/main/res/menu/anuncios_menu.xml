@@ -10,6 +10,10 @@
             android:title="Meus anúncios"/>
 
         <item
+            android:id="@+id/item_limpar"
+            android:title="Limpar Filtros"/>
+
+        <item
             android:id="@+id/item_sair"
             android:title="Sair"/>
     </group>

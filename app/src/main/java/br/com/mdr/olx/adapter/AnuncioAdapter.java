@@ -39,8 +39,7 @@ public class AnuncioAdapter extends RecyclerView.Adapter<AnuncioAdapter.MyViewHo
         Anuncio anuncio = anuncios.get(position);
         Picasso.get().load(anuncio.getFotos().get(0)).into(myViewHolder.imgProduto);
         myViewHolder.txtNomeProduto.setText(anuncio.getTitulo());
-        DecimalFormat format = new DecimalFormat("0.00");
-        String valorAnuncio = "R$ " + format.format(anuncio.getValor());
+        String valorAnuncio = anuncio.getValor();
         myViewHolder.txtVlr.setText(valorAnuncio);
     }
 

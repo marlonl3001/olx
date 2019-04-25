@@ -2,6 +2,7 @@ package br.com.mdr.olx.model;
 
 import com.google.firebase.database.DatabaseReference;
 
+import java.io.Serializable;
 import java.util.List;
 
 import br.com.mdr.olx.helper.ConfiguracaoFirebase;
@@ -10,13 +11,15 @@ import br.com.mdr.olx.helper.UsuarioFirebase;
 /**
  * Created by ${USER_NAME} on 17/04/2019.
  */
-public class Anuncio {
+public class Anuncio implements Serializable {
     private String idAnuncio;
     private String idUsuario;
     private String titulo;
     private String desc;
-    private Double valor;
+    private String valor;
     private String telefone;
+    private String estado;
+    private String categoria;
     private List<String> fotos;
 
     public Anuncio() {
@@ -31,6 +34,33 @@ public class Anuncio {
                 .child(idUsuario)
                 .child(getIdAnuncio());
         anuncioRef.setValue(this);
+        salvarPublico();
+    }
+
+    private void salvarPublico() {
+        DatabaseReference anuncioRef = ConfiguracaoFirebase.getFirebase().child("anuncios")
+                .child(getEstado())
+                .child(getCategoria())
+                .child(getIdAnuncio());
+        anuncioRef.setValue(this);
+    }
+
+    public void remover() {
+        DatabaseReference anuncioRef = ConfiguracaoFirebase.getFirebase().child("meusAnuncios")
+                .child(UsuarioFirebase.getIdUsuario())
+                .child(getIdAnuncio());
+
+        anuncioRef.removeValue();
+        removerPublico();
+    }
+
+    private void removerPublico() {
+        DatabaseReference anuncioRef = ConfiguracaoFirebase.getFirebase().child("anuncios")
+                .child(getEstado())
+                .child(getCategoria())
+                .child(getIdAnuncio());
+
+        anuncioRef.removeValue();
     }
 
     public String getIdAnuncio() {
@@ -65,11 +95,11 @@ public class Anuncio {
         this.desc = desc;
     }
 
-    public Double getValor() {
+    public String getValor() {
         return valor;
     }
 
-    public void setValor(Double valor) {
+    public void setValor(String valor) {
         this.valor = valor;
     }
 
@@ -79,6 +109,22 @@ public class Anuncio {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     public List<String> getFotos() {
